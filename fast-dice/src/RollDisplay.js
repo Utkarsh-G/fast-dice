@@ -1,15 +1,4 @@
-import React, {useState} from "react";
-
-
-const gen_random = (size) => {
-    let my_arr = []
-    for (let i = 0; i < 10; i++){
-        my_arr.push(Math.ceil(Math.random() * size))
-    }
-    return my_arr
-}
-
-function RollDisplay({d20, d12, d10, d8, d6, d4, d100 }) {
+function RollDisplay({d20, d12, d10, d8, d6, d4, d100, bonus, setBonus }) {
     
         return (
         <div style={{margin: 'auto', display: 'block', columnCount: 8}}>
@@ -28,7 +17,7 @@ function RollDisplay({d20, d12, d10, d8, d6, d4, d100 }) {
         
         <p> D20</p>
         {d20.map((number)=>{
-            return <p>{number}</p>
+            return <p>{number+bonus}</p>
         })}
 
         <p> D12</p>
