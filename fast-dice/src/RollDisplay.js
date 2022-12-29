@@ -18,15 +18,6 @@ function RollDisplay({d20, d12, d10, d8, d6, d4, d100, bonus, setBonus }) {
         <NumberBlock number={7} setBonus={setBonus}/>
         <NumberBlock number={8} setBonus={setBonus}/>
         <NumberBlock number={9} setBonus={setBonus}/>
-        {/* <p> -1 </p> */}
-        {/* <p> 0 </p>
-        <p> +1 </p>
-        <p> +2 </p>
-        <p> +3 </p>
-        <p> +4 </p>
-        <p> +5 </p>
-        <p> +6 </p>
-        <p> +7 </p>  */}
         
         <p> D20</p>
         {d20.map((number)=>{
@@ -35,32 +26,32 @@ function RollDisplay({d20, d12, d10, d8, d6, d4, d100, bonus, setBonus }) {
 
         <p> D12</p>
         {d12.map((number)=>{
-            return <p>{number}</p>
+            return <p>{number+bonus}</p>
         })}
 
         <p> D10</p>
         {d10.map((number)=>{
-            return <p>{number}</p>
+            return <p>{number+bonus}</p>
         })}
 
         <p> D8</p>
         {d8.map((number)=>{
-            return <p>{number}</p>
+            return <p>{number+bonus}</p>
         })}
 
         <p> D6</p>
         {d6.map((number)=>{
-            return <p>{number}</p>
+            return <p>{number+bonus}</p>
         })}
 
         <p> D4</p>
         {d4.map((number)=>{
-            return <p>{number}</p>
+            return <p>{number+bonus}</p>
         })}
 
         <p> D100</p>
         {d100.map((number)=>{
-            return <p>{number}</p>
+            return <p>{number+bonus}</p>
         })}
                 
         </div>
