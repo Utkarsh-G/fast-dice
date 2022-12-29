@@ -3,11 +3,22 @@ import './App.css';
 import RollDisplay from './RollDisplay';
 import { useState } from 'react';
 
+const gen_random = (size) => {
+  let my_arr = []
+  for (let i = 0; i < 10; i++){
+      my_arr.push(Math.ceil(Math.random() * size))
+  }
+  return my_arr
+}
+
 function App() {
 
-  const [roll, setroll] = useState(0)
+  //const [roll, setroll] = useState(0)
+  const [d20, setD20] = useState(gen_random(20))
+
   function clickHandler(e) {
-    setroll(roll+1); // width: 100
+    //setroll(roll+1); // width: 100
+    setD20(gen_random(20))
 }
   return (
     <div className="App" onClick={clickHandler}>
@@ -24,7 +35,7 @@ function App() {
         >
           Learn React
         </a> */}
-        <RollDisplay />
+        <RollDisplay d20={d20} />
       </header>
     </div>
   );
