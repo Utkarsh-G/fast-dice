@@ -1,7 +1,8 @@
-function NumberBlock({number, setBonus}) {
+function NumberBlock({number, setBonus, setMultiplier}) {
 
     function clickHandler (e) {
-        setBonus(number)
+        if (setBonus) setBonus(number)
+        if (setMultiplier) setMultiplier(number)
     }
 
     return (<p onClick={clickHandler}> {number}</p>)

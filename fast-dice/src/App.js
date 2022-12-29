@@ -23,6 +23,7 @@ function App() {
   const [d100, setD100] = useState(gen_random(100))
 
   const [bonus, setBonus] = useState(0)
+  const [multiplier, setMultiplier] = useState(1)
 
   function clickHandler(e) {
     //setroll(roll+1); // width: 100
@@ -49,7 +50,7 @@ function App() {
         >
           Learn React
         </a> */}
-        <RollDisplay d20={d20} d12={d12} d10={d10} d8={d8} d6={d6} d4={d4} d100={d100} bonus={bonus} setBonus={setBonus} />
+        <RollDisplay d20={d20} d12={d12} d10={d10} d8={d8} d6={d6} d4={d4} d100={d100} bonus={bonus} setBonus={setBonus} multiplier={multiplier} setMultiplier={setMultiplier} />
       </header>
     </div>
   );
