@@ -1,19 +1,32 @@
+import NumberBlock from "./NumberBlock";
+
 function RollDisplay({d20, d12, d10, d8, d6, d4, d100, bonus, setBonus }) {
     
         return (
         <div style={{margin: 'auto', display: 'block', columnCount: 8}}>
         
-        Bonus
-        <p> Nat </p>
-        <p> -1 </p>
-        <p> 0 </p>
+        Bonus:{bonus}
+        {/* <p> Nat </p> */}
+        <NumberBlock number={-1} setBonus={setBonus}/>
+        <NumberBlock number={0} setBonus={setBonus}/>
+        <NumberBlock number={1} setBonus={setBonus}/>
+        <NumberBlock number={2} setBonus={setBonus}/>
+        <NumberBlock number={3} setBonus={setBonus}/>
+        <NumberBlock number={4} setBonus={setBonus}/>
+        <NumberBlock number={5} setBonus={setBonus}/>
+        <NumberBlock number={6} setBonus={setBonus}/>
+        <NumberBlock number={7} setBonus={setBonus}/>
+        <NumberBlock number={8} setBonus={setBonus}/>
+        <NumberBlock number={9} setBonus={setBonus}/>
+        {/* <p> -1 </p> */}
+        {/* <p> 0 </p>
         <p> +1 </p>
         <p> +2 </p>
         <p> +3 </p>
         <p> +4 </p>
         <p> +5 </p>
         <p> +6 </p>
-        <p> +7 </p> 
+        <p> +7 </p>  */}
         
         <p> D20</p>
         {d20.map((number)=>{

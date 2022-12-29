@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const gen_random = (size) => {
   let my_arr = []
-  for (let i = 0; i < 10; i++){
+  for (let i = 0; i < 11; i++){
       my_arr.push(Math.ceil(Math.random() * size))
   }
   return my_arr
@@ -22,7 +22,7 @@ function App() {
   const [d4, setD4] = useState(gen_random(4))
   const [d100, setD100] = useState(gen_random(100))
 
-  const [bonus, setBonus] = useState(5)
+  const [bonus, setBonus] = useState(0)
 
   function clickHandler(e) {
     //setroll(roll+1); // width: 100
