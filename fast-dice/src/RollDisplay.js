@@ -16,17 +16,10 @@ function RollDisplay({d20, d12, d10, d8, d6, d4, d100, bonus, setBonus, multipli
 
         return (
         <div style={{margin: 'auto', display: 'block', columnCount: 9}}>
-
-        Multiplier:{multiplier}
-        
-
-        {multiplierArray.map((number) => {
-            return <NumberBlock number={number} setMultiplier={setMultiplier} />
-        })}
         
         Bonus:{bonus}
         {bonusArray.map((number) => {
-            return <NumberBlock number={number} setBonus={setBonus} />
+            return <NumberBlock number={number} setBonus={setBonus} highlight={number==bonus? "green": "none"}/>
         })}
         
         <p> {multiplier}D20+{bonus}</p>
@@ -62,6 +55,11 @@ function RollDisplay({d20, d12, d10, d8, d6, d4, d100, bonus, setBonus, multipli
         <p> {multiplier}D100+{bonus}</p>
         {d100.map((number, index)=>{
             return <p>{multipleDiceSum(d100, index, multiplier)+bonus}</p>
+        })}
+
+        #Dice:{multiplier}
+        {multiplierArray.map((number) => {
+            return <NumberBlock number={number} setMultiplier={setMultiplier} highlight={number==multiplier? "green": "none"}/>
         })}
                 
         </div>
