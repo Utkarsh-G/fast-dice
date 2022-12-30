@@ -24,7 +24,10 @@ function RollDisplay({d20, d12, d10, d8, d6, d4, d100, bonus, setBonus, multipli
         
         <p> {multiplier}D20+{bonus}</p>
         {d20.map((number, index)=>{
-            return <p>{multipleDiceSum(d20, index, multiplier)+bonus}</p>
+            let pStyle = { color: 'white'};
+            if (number === 20 && multiplier === 1) pStyle = { color: 'green' };
+            if (number === 1 && multiplier === 1) pStyle = { color: 'red' };
+            return <p style={pStyle}>{multipleDiceSum(d20, index, multiplier)+bonus}</p>
         })}
 
         <p> {multiplier}D12+{bonus}</p>
