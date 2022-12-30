@@ -11,35 +11,23 @@ function RollDisplay({d20, d12, d10, d8, d6, d4, d100, bonus, setBonus, multipli
             return sum
         }
 
+        const multiplierArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+        const bonusArray = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
         return (
         <div style={{margin: 'auto', display: 'block', columnCount: 9}}>
 
         Multiplier:{multiplier}
-        <NumberBlock number={1} setMultiplier={setMultiplier} />
-        <NumberBlock number={2} setMultiplier={setMultiplier}/>
-        <NumberBlock number={3} setMultiplier={setMultiplier}/>
-        <NumberBlock number={4} setMultiplier={setMultiplier}/>
-        <NumberBlock number={5} setMultiplier={setMultiplier}/>
-        <NumberBlock number={6} setMultiplier={setMultiplier}/>
-        <NumberBlock number={7} setMultiplier={setMultiplier}/>
-        <NumberBlock number={8} setMultiplier={setMultiplier}/>
-        <NumberBlock number={9} setMultiplier={setMultiplier}/>
-        <NumberBlock number={10} setMultiplier={setMultiplier}/>
-        <NumberBlock number={11} setMultiplier={setMultiplier}/>
+        
+
+        {multiplierArray.map((number) => {
+            return <NumberBlock number={number} setMultiplier={setMultiplier} />
+        })}
         
         Bonus:{bonus}
-        {/* <p> Nat </p> */}
-        <NumberBlock number={-1} setBonus={setBonus}/>
-        <NumberBlock number={0} setBonus={setBonus}/>
-        <NumberBlock number={1} setBonus={setBonus}/>
-        <NumberBlock number={2} setBonus={setBonus}/>
-        <NumberBlock number={3} setBonus={setBonus}/>
-        <NumberBlock number={4} setBonus={setBonus}/>
-        <NumberBlock number={5} setBonus={setBonus}/>
-        <NumberBlock number={6} setBonus={setBonus}/>
-        <NumberBlock number={7} setBonus={setBonus}/>
-        <NumberBlock number={8} setBonus={setBonus}/>
-        <NumberBlock number={9} setBonus={setBonus}/>
+        {bonusArray.map((number) => {
+            return <NumberBlock number={number} setBonus={setBonus} />
+        })}
         
         <p> {multiplier}D20+{bonus}</p>
         {d20.map((number, index)=>{
